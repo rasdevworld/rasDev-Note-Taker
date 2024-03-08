@@ -32,7 +32,10 @@ MIT License - The License file is provided here : (./LICENSE)
 
 ## Screenshot
 
-
+![Alt text](Assets/note-taker-homepage.png)
+![Alt text](Assets/adding-new-note.png)
+![Alt text](Assets/saved-new-note.png)
+![Alt text](Assets/delete-note.png)
 
 ## Github Repository and Deployment Link
 
