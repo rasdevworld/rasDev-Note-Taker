@@ -7,33 +7,28 @@ const PORT = process.env.PORT || 3001
 
 // Activating the PORT in the server
 const app =  express()
+const route = require("./routes")
 
 // Parsing the data and converting into an object
 app.use(express.json())
 app.use(express.urlencoded({extended : true}))
+app.use(express.static("public"))
 
-app.get("/api/notes", (req, res) => {
-    fs.readFile("./db/db.json", "utf8", (err, data) => {
-        const newData = JSON.parse(data)
-        res.json(newData)
-    })
-})
+// http://localhost:3001/api
+app.use("/api",route)
 
-app.post("/api/notes", (req, res) => {
-
+// HTML routes
+app.get("/notes", (req, res) => {
+    res.sendFile(path.join(__dirname, "./public/notes.html"))
 })
 
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "./public/index.html"))
 })
 
-app.get("/notes", (req, res) => {
-    fs.readFile("./Assets/db/db.json", "utf8", (err, data) => {
-        const dbData = JSON.parse(data)
-        res.json(dbData)
-    })
-})
+
+
 
 app.listen(PORT, () => {
-    console.log("Application is listening at the PORT: http://localhost:"+PORT+"/")
+    console.log("Application is listening at the PORT: http://localhost:"+PORT)
 })
