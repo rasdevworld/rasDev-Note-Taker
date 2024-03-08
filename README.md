@@ -36,6 +36,6 @@ MIT License - The License file is provided here : (./LICENSE)
 
 ## Github Repository and Deployment Link
 
-Github Repository: 
+Github Repository: https://github.com/rasdevworld/rasDev-Note-Taker
 
-Deployment Link :
+Deployment Link : https://note-taker-rr-bdfae865ca26.herokuapp.com/

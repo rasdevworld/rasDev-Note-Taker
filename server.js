@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3001
 
 // Activating the PORT in the server
 const app =  express()
-const route = require("./routes")
+const route = require("./routes/index")
 
 // Parsing the data and converting into an object
 app.use(express.json())
@@ -25,9 +25,6 @@ app.get("/notes", (req, res) => {
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "./public/index.html"))
 })
-
-
-
 
 app.listen(PORT, () => {
     console.log("Application is listening at the PORT: http://localhost:"+PORT)
