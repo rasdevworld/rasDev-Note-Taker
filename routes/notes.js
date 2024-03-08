@@ -39,4 +39,23 @@ router.post("/", (req, res) => {
     }
 })
 
+// DELETE route to delete the data by id parameter
+router.delete("/:id/", (req, res) => {
+
+    fs.readFile('./db/db.json', (err, data) => {
+        obj = JSON.parse(data)
+       
+        obj = obj.filter((item) => {
+            let url = req.params.id; 
+            return item.id !== url;
+        })
+       
+        console.log(obj)
+        let json = JSON.stringify(obj);
+        fs.writeFile('./db/db.json', json, (err)=>{
+            if(err) throw err
+        })
+    })
+})
+
 module.exports = router
