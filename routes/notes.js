@@ -54,6 +54,7 @@ router.delete("/:id/", (req, res) => {
         let json = JSON.stringify(obj);
         fs.writeFile('./db/db.json', json, (err)=>{
             if(err) throw err
+            res.json(obj)
         })
     })
 })
